@@ -22,41 +22,39 @@ const form = ref<PAYLOAD>({
             <CardDescription>Enter your information below to create your account.</CardDescription>
           </CardHeader>
           <CardContent class="grid gap-4">
+            <div class="space-y-2">
+              <Label for="name">Name</Label>
+              <Input
+                v-model="form.name"
+                id="name"
+                placeholder="Name"
+                type="text"
+              />
+            </div>
+            <div className="space-y-2">
+              <Label for="email">Email</Label>
+              <Input
+                v-model="form.email"
+                id="email"
+                placeholder="nahid@test.com"
+                type="email"
+                required
+              />
+            </div>
             <div class="grid gap-2">
-              <div className="space-y-2">
-                <Label for="name">Name</Label>
-                <Input
-                  v-model="form.name"
-                  id="name"
-                  placeholder="Name"
-                  type="text"
-                />
-              </div>
-              <div className="space-y-2">
-                <Label for="email">Email</Label>
-                <Input
-                  v-model="form.email"
-                  id="email"
-                  placeholder="nahid@test.com"
-                  type="email"
-                  required
-                />
-              </div>
-              <div class="grid gap-2">
-                <Label for="password">Password</Label>
-                <Input
-                  v-model="form.password"
-                  id="password"
-                  type="password"
-                  required
-                />
-              </div>
-              <div class="grid grid-cols-1 mt-2">
-                <SocialButton
-                  icon="radix-icons:github-logo"
-                  label="Github"
-                ></SocialButton>
-              </div>
+              <Label for="password">Password</Label>
+              <Input
+                v-model="form.password"
+                id="password"
+                type="password"
+                required
+              />
+            </div>
+            <div class="grid grid-cols-1 mt-2">
+              <SocialButton
+                icon="radix-icons:github-logo"
+                label="Github"
+              ></SocialButton>
             </div>
           </CardContent>
           <CardFooter class="flex-col space-y-2">
