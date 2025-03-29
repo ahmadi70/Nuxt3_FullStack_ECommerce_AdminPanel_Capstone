@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 type PAYLOAD = {
   password: string
   name: string
@@ -53,12 +52,10 @@ const form = ref<PAYLOAD>({
                 />
               </div>
               <div class="grid grid-cols-1 mt-2">
-                <Button type="button" variant="outline">
-                  <div class="flex items-center gap-1">
-                    <Icon name="radix-icons:github-logo"></Icon>
-                    Github
-                  </div>
-                </Button>
+                <SocialButton
+                  icon="radix-icons:github-logo"
+                  label="Github"
+                ></SocialButton>
               </div>
             </div>
           </CardContent>
