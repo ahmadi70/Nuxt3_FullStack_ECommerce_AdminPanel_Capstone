@@ -19,7 +19,7 @@ const form = ref<PAYLOAD>({
         <Card class="w-full max-w-md">
           <CardHeader>
             <CardTitle class="text-2xl font-bold">Register</CardTitle>
-            <CardDescription>Enter your email and password to create your account</CardDescription>
+            <CardDescription>Enter your information below to create your account.</CardDescription>
           </CardHeader>
           <CardContent class="grid gap-4">
             <div class="grid gap-2">
