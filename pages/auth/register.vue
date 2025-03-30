@@ -10,12 +10,26 @@ const form = ref<PAYLOAD>({
   email: '',
   password: ''
 })
+
+const onSubmit = async () => {
+  try {
+    await $fetch('/api/auth/register', {
+      method: 'POST',
+      body: form.value 
+    })
+
+    navigateTo('/')
+    
+  } catch (error) {
+    console.log(error)
+  }
+}
 </script>
 
 <template>
   <div class="flex flex-col justify-center items-center min-h-screen">
     <div class="w-full max-w-sm">
-      <form action="">
+      <form @submit.prevent="onSubmit">
         <Card class="w-full max-w-md">
           <CardHeader>
             <CardTitle class="text-2xl font-bold">Register</CardTitle>
