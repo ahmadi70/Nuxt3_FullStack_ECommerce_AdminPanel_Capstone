@@ -4,19 +4,25 @@ import { useToast } from "~/components/ui/toast/use-toast"
 interface State {
   isLoading: boolean
   appError: APIError | null
+  isAlertModalVisible: boolean
 }
 
 const state = reactive<State>({
   isLoading: false,
-  appError: null
+  appError: null,
+  isAlertModalVisible: false
 })
 
 export default () => {
-  const { isLoading, appError } = toRefs(state)
+  const { isLoading, appError, isAlertModalVisible } = toRefs(state)
   const { toast } = useToast()
 
   const toggleLoading = (value: boolean) => {
     state.isLoading = value
+  }
+
+  const toggleAlertModal = (value: boolean) => {
+    state.isAlertModalVisible = value
   }
 
   const toggleError = (error: null | APIError) => {
@@ -49,6 +55,8 @@ export default () => {
     toggleLoading,
     toggleError,
     showError,
-    showMessage
+    showMessage,
+    isAlertModalVisible,
+    toggleAlertModal
   }
 }
