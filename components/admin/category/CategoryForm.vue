@@ -40,17 +40,16 @@ const onSubmit = form.handleSubmit(async (values) => {
     toggleLoading(true)
 
     if (isEditing.value) {
-      console.log('Edit Category ', values)
-
-      // await $fetch('')
+      await $fetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`, {
+        method: 'PATCH',
+        body: values
+      })
 
     } else {
       const data = await $fetch('/api/admin/categories/', {
         method: 'POST',
         body: values
       })
-
-      console.log(data)
     }
 
     showMessage({
@@ -75,11 +74,9 @@ const deleteCategory = async () => {
 
     toggleLoading(true) 
 
-    const data = await $fetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`, {
+    await $fetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`, {
         method: 'DELETE'
       })
-    
-    console.log(data)
 
     showMessage({
       title: 'Delete Category'
