@@ -1,4 +1,7 @@
 <script setup lang="ts">
+import useStore from '~/compsables/useStore'
+
+
 type PAYLOAD = {
   email: string
   password: string
@@ -9,19 +12,30 @@ const form = ref<PAYLOAD>({
   password: ''
 })
 
+const { toggleLoading, showMessage, showError, isLoading } = useStore()
 const onSubmit = async () => {
   try {
+    toggleLoading(true)
+
     await $fetch('/api/auth/login', {
       method: 'POST',
       body: form.value 
     })
 
-    navigateTo('/')
-    
+    showMessage({
+      title: 'Welcome Back'
+    })
+
+    await navigateTo('/')
+
   } catch (error) {
-    console.log(error)
+    const err = handleError(error)
+    showError(err)
+  } finally {
+    toggleLoading(false)
   }
 }
+
 </script>
 
 <template>
@@ -61,7 +75,7 @@ const onSubmit = async () => {
             </div>
           </CardContent>
           <CardFooter class="flex-col space-y-2">
-            <Button type="submit" class="w-full">
+            <Button type="submit" class="w-full" :disabled="isLoading">
               Login
             </Button>
             <p>

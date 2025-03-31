@@ -50,6 +50,7 @@ export default defineEventHandler( async (event) => {
 
   if (transformedUser) {
     await setUserSession(event, {
+      // @ts-ignore
       user: transformedUser
     })
   }
