@@ -74,8 +74,18 @@ const deleteCategory = async () => {
   try {
 
     toggleLoading(true) 
+
+    const data = await $fetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`, {
+        method: 'DELETE'
+      })
     
-    console.log('Delete Category')
+    console.log(data)
+
+    showMessage({
+      title: 'Delete Category'
+    })
+
+    await navigateTo('/admin/categories')
 
   } catch (error) {
 
