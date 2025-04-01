@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { columns } from '~/components/admin/category/column'
+import { columns } from '~/components/admin/category/CategoryColumn'
 
 const { data: categories, status } = await useFetch('/api/admin/categories', {
   key: 'categories'
