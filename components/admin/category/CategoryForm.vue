@@ -4,13 +4,14 @@ import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
 import useStore from '~/compsables/useStore'
 
-const { isLoading, toggleLoading, showMessage, showError, toggleAlertModal, isAlertModalVisible } = useStore()
+const { isLoading, toggleLoading, showMessage, showError } = useStore()
 
 const title = ref('Edit Category')
 const description = ref('Edit Category')
 const toastMessage = ref('Category Updated')
 const action = ref('Save Changes')
 const isEditing = ref(true)
+const isAlertModalVisible = ref(false)
 
 const route = useRoute()
 const { data: currentCategory } = await useFetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`)
@@ -101,7 +102,7 @@ const deleteCategory = async () => {
     <div class="flex items-center justify-between">
       <heading :title="title" :description="description"></heading>
       <Button
-        @click="toggleAlertModal(true)"
+        @click="isAlertModalVisible != isAlertModalVisible"
         v-if="isEditing"
         size="sm"
         variant="destructive"
@@ -135,5 +136,10 @@ const deleteCategory = async () => {
       >{{ action }}</Button>
     </form>
   </div>
-  <AlertModal @on-confirm="deleteCategory" v-if="isAlertModalVisible"></AlertModal>
+  <AlertModal
+    v-if="isAlertModalVisible"
+    @on-confirm="deleteCategory"
+    :is-open="isAlertModalVisible"
+    @on-close="isAlertModalVisible = false"
+  ></AlertModal>
 </template>
