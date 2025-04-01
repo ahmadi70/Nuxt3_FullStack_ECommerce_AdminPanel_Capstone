@@ -2,7 +2,16 @@
 import { columns } from '~/components/admin/category/CategoryColumn'
 
 const { data: categories, status } = await useFetch('/api/admin/categories', {
-  key: 'categories'
+  key: 'categories',
+  transform: (colors) => {
+    return colors.map(item => {
+      return {
+        id: item.id,
+        name: item.name,
+        createdAt: useDateFormat(new Date(item.createdAt), 'D. MMMM YYYY')
+      }
+    })
+  }
 })
 
 </script>
