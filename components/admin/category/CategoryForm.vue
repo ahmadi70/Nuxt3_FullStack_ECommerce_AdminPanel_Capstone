@@ -14,7 +14,10 @@ const isEditing = ref(true)
 const isAlertModalVisible = ref(false)
 
 const route = useRoute()
-const { data: currentCategory } = await useFetch(`/api/admin/categories/${(route.params as RouteParams).categoryId}`)
+const categoryId = (route.params as RouteParams).categoryId
+const { data: currentCategory } = categoryId !== "new" 
+  ? await useFetch(`/api/admin/categories/${categoryId}`)
+  : { data: ref(null) }
 
 watchEffect(() => {
   if(!currentCategory.value) {
