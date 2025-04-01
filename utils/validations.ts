@@ -15,3 +15,7 @@ export const colorSchema = z.object({
   value: z.string().min(1, { message: 'color code is required' }).default('#000000')
 })
 
+export const sizeSchema = z.object({
+  name: z.string().min(1, { message: 'Size name is required' }),
+  value: z.string().min(1, { message: 'Size code is required' })
+})
