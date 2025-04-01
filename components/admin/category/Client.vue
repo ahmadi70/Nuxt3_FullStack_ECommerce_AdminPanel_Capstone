@@ -1,4 +1,9 @@
 <script setup lang="ts">
+import { columns } from '~/components/admin/category/column'
+
+const { data: categories, status } = await useFetch('/api/admin/categories', {
+  key: 'categories'
+})
 
 </script>
 
@@ -16,4 +21,10 @@
       </Button>
     </NuxtLink>
   </div>
+  <DataTable
+    :columns="columns"
+    v-if="status !== 'pending'"
+    :data="categories ? categories : []"
+    column-to-search="name"
+  ></DataTable>
 </template>
