@@ -1,5 +1,4 @@
 import db from "~/utils/db"
-import { categorySchema } from "~/utils/validations"
 
 export default defineEventHandler(async (event) => {
   
