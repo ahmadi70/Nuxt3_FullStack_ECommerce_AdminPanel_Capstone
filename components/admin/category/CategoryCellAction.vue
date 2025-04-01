@@ -9,6 +9,9 @@ const props = defineProps<{
 
 function copy(id: string) {
   navigator.clipboard.writeText(id)
+  showMessage({
+    title: 'Category Id copied'
+  })
 }
 
 const { showMessage, showError, toggleLoading} = useStore()
