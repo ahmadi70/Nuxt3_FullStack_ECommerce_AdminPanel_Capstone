@@ -18,6 +18,7 @@ const logout = async () => {
   <NuxtLink to="/admin/categories">Categories</NuxtLink> | 
   <NuxtLink to="/admin/colors">Colors</NuxtLink> | 
   <NuxtLink to="/admin/sizes">Sizes</NuxtLink> | 
+  <NuxtLink to="/admin/products">Product</NuxtLink> | 
   
   <button @click="logout">Logout</button>
   <div>
