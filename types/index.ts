@@ -1,3 +1,5 @@
+import type { Product, Category, Size, Color, Image } from '@prisma/client'
+
 export type APIError = {
   statusCode: number
   statusMessage: string
@@ -10,4 +12,11 @@ export type RouteParams = {
   colorId: string
   productId: string
   sizeId: string
+}
+
+export type SafeProduct = Product & {
+  category: Category
+  size: Size
+  color: Color
+  images: Image[]
 }
