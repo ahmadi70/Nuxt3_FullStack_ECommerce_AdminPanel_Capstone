@@ -3,20 +3,18 @@ import { columns } from '~/components/admin/product/ProductColumn'
 
 const { data: products, status } = await useFetch('/api/admin/products', {
   key: 'products',
-  transform: (products) => {
-    return products.map(item => {
-      return {
-        id: item.id,
-        name: item.name,
-        price: formatter.format(item.price),
-        isFeatured: item.isFeatured,
-        isArchived: item.isArchived,
-        category: item.category.name,
-        size: item.size.value,
-        color: item.color.value,
-        createdAt: useDateFormat(new Date(item.createdAt), 'D. MMMM YYYY')
-      }
-    })
+  transform: ({ products }) => {
+    return products.map(item => ({
+      id: item.id,
+      name: item.name,
+      price: formatter.format(item.price),
+      isFeatured: item.isFeatured,
+      isArchived: item.isArchived,
+      category: item.category.name,
+      size: item.size.value,
+      color: item.color.value,
+      createdAt: useDateFormat(new Date(item.createdAt), 'D. MMMM YYYY')
+    }))
   }
 })
 
