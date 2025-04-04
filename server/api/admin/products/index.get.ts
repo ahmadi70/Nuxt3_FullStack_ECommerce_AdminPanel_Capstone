@@ -13,5 +13,40 @@ export default defineEventHandler(async (event) => {
     }
   })
 
-  return products
+  const featuredProducts = await db.product.findMany({
+    where: {
+      isFeatured: true,
+      isArchived: false,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+    include: {
+      images: true,
+      category: true,
+      color: true,
+      size: true,
+    },
+  })
+
+  const archivedProducts = await db.product.findMany({
+    where: {
+      isArchived: true,
+    },
+    orderBy: {
+      createdAt: "desc",
+    },
+    include: {
+      images: true,
+      category: true,
+      color: true,
+      size: true,
+    },
+  })
+
+  return {
+    products,
+    featuredProducts,
+    archivedProducts,
+  }
 })
