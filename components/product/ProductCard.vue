@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import type { SafeProduct } from '~/types'
+import usePreviewModal from '~/compsables/usePreviewModal'
+
+const { onOpen } = usePreviewModal()
 
 defineProps<{
   data: SafeProduct
@@ -18,7 +21,7 @@ defineProps<{
           <TooltipProvider>
             <Tooltip>
               <TooltipTrigger as-child>
-                <Button size="icon" class="rounded-full">
+                <Button @click="onOpen(data)" size="icon" class="rounded-full">
                   <Icon name="lucide:expand" class="w-4 h-4" />
                 </Button>
               </TooltipTrigger>
@@ -38,4 +41,5 @@ defineProps<{
       </Button>
     </CardContent>
   </Card>
+  <ProductModal></ProductModal>
 </template>
