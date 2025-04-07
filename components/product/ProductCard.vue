@@ -14,7 +14,7 @@ defineProps<{
     <CardContent class="p-0">
       <div class="overflow-hidden rounded-md relative">
         <img :src="data.images[0].url" :alt="data.name" class="h-[200px]">
-        <div class="absolute top-2 left-2">
+        <div class="absolute top-2 left-2" v-if="data.isFeatured ">
           <Badge variant="destructive" class="w-auto"> Featured </Badge>
         </div>
         <div class="absolute top-2 right-2 z-10">
