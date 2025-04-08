@@ -1,12 +1,16 @@
 <script setup lang="ts">
 import type { SafeProduct } from '~/types'
 import usePreviewModal from '~/compsables/usePreviewModal'
+import useCart from '~/compsables/useCart';
 
 const { onOpen } = usePreviewModal()
 
 defineProps<{
   data: SafeProduct
 }>()
+
+const { addItem } = useCart()
+
 </script>
 
 <template>
@@ -36,7 +40,12 @@ defineProps<{
       <h3 class="mt-4 font-bold text-gray-900">{{ data.name }}</h3>
       <p class="italic text-gray-500">{{ data.category.name }}</p>
       <p class="mt-2 font-medium text-foreground">${{ data.price }}</p>
-      <Button variant="secondary" class="mt-4 w-full">
+      <Button
+        class="mt-4 w-full"
+        variant="secondary"
+        type="button"
+        @click="addItem(data)"
+      >
         Add to Cart
       </Button>
     </CardContent>
