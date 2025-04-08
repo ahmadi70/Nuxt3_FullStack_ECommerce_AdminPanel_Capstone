@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import useCart from '~/compsables/useCart'
 
 const { user, clear } = useUserSession()
 
@@ -6,6 +7,8 @@ const logout = async () => {
   await clear()
   navigateTo('/auth/login')
 }
+
+const { cartItems } = useCart()
 
 </script>
 
@@ -80,7 +83,7 @@ const logout = async () => {
         <NuxtLink to="/cart">
           <Button class="relative px-5 py-1 h-8 space-x-2">
             <Icon name="lucide:shopping-bag" class="h-4 w-4"></Icon>
-            5
+            {{ cartItems ? cartItems.length : 0 }}
           </Button>
         </NuxtLink>
       </nav>
