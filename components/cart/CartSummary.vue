@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import useCart from '~/compsables/useCart'
+import useStore from '~/compsables/useStore'
 
 const { cartItems, removeAll} = useCart()
 
@@ -21,9 +22,30 @@ const onCheckout = async () => {
 
   console.log(data)
 
+  if (data) {
+    window.location.href = data
+  }
+
   removeAll()
 
+  return
 }
+
+const route = useRoute()
+const { showMessage } = useStore()
+onMounted(() => {
+  if(route.query.success) {
+    showMessage({
+      title: 'Payment Completed'
+    })
+  }
+  if(route.query.canceled) {
+    showMessage({
+      title: 'Something went wrong',
+      variant: 'destructive'
+    })
+  }
+})
 </script>
 
 <template>
