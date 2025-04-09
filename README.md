@@ -1,75 +1,65 @@
-# Nuxt Minimal Starter
+# 🛒 Nuxt 3 E-Commerce & Admin Panel Capstone
 
-Look at the [Nuxt documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+A full-stack E-Commerce application with a robust Admin Dashboard built using **Nuxt 3, Vue 3, TypeScript, TailwindCSS (ShadCN), MongoDB,** and **Prisma**. This project showcases modern web development best practices, offering both a seamless shopping experience for users and a powerful management interface for admins.
+ 
 
-## Setup
+## 🚀 Features & Topics Covered  
 
-Make sure to install dependencies:
+- **Props & Emits** – Streamlined parent-child component communication  
+- **Reusable Components** – Modular, scalable, and maintainable UI design  
+- **Full CRUD Functionality** – Create, read, update, and delete data with ease  
+- **Pagination Handling** – Efficiently manage and display large datasets  
+- **Type Safety with TypeScript** – Robust, error-resistant Vue code  
+- **State Management via Composables** – Organized and scalable state handling  
+- **Authentication (UI & API)** – Secure login, registration, and route protection  
+- **Global Loader & Error Handling** – Centralized UX feedback mechanisms  
 
-```bash
-# npm
-npm install
+### 🧑‍💼 Admin Panel Features
 
-# pnpm
+- Dashboard Overview  
+- Product Management  
+- Category, Color & Size Management  
+- Analytics & Sales Insights  
+
+### 🛍️ Shop Pages
+
+- Home Page  
+- Product Details Page  
+- Cart Page  
+
+- **Stripe Integration** – Secure payment gateway implementation  
+- **Database** – MongoDB with Prisma ORM for scalable data access
+
+## 🛠️ Project Setup  
+
+Install dependencies using [pnpm](https://pnpm.io/):  
+
+```sh
 pnpm install
-
-# yarn
-yarn install
-
-# bun
-bun install
 ```
 
-## Development Server
+### 🔥 Start Development Server  
 
-Start the development server on `http://localhost:3000`:
-
-```bash
-# npm
-npm run dev
-
-# pnpm
+```sh
 pnpm dev
-
-# yarn
-yarn dev
-
-# bun
-bun run dev
 ```
 
-## Production
+### 🏗️ Build for Production  
 
-Build the application for production:
-
-```bash
-# npm
-npm run build
-
-# pnpm
+```sh
 pnpm build
-
-# yarn
-yarn build
-
-# bun
-bun run build
 ```
 
-Locally preview production build:
+## 📚 Resources  
 
-```bash
-# npm
-npm run preview
-
-# pnpm
-pnpm preview
-
-# yarn
-yarn preview
-
-# bun
-bun run preview
-```
-
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+- [**Nuxt**](https://nuxt.com/) – The intuitive Vue framework for building modern web apps  
+- [**Vue.js**](https://vuejs.org/) – The progressive JavaScript framework for building user interfaces  
+- [**TypeScript**](https://www.typescriptlang.org/) – A strongly typed superset of JavaScript  
+- [**Tailwind CSS**](https://tailwindcss.com/) – A utility-first CSS framework for rapid UI development  
+- [**ShadCN Vue**](https://www.shadcn-vue.com/) – Beautifully designed UI components built for Vue  
+- [**Iconify**](https://iconify.design/) – Unified icon framework with support for 100+ icon sets  
+- [**Prisma**](https://www.prisma.io/) – Next-generation Node.js and TypeScript ORM  
+- [**MongoDB**](https://www.mongodb.com/) – A flexible NoSQL document database  
+- [**Nuxt Cloudinary**](https://cloudinary.nuxtjs.org/) – Seamless integration of Cloudinary with Nuxt for image optimization and delivery  
+- [**Stripe**](https://stripe.com) – Powerful APIs for payment processing and financial infrastructure  
+- [**UNovis**](https://unovis.dev/) – A modular and customizable data visualization framework
