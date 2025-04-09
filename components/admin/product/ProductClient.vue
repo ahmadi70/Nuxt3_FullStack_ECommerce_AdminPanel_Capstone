@@ -3,7 +3,7 @@ import { columns } from '~/components/admin/product/ProductColumn'
 
 const { data: products, status } = await useFetch('/api/admin/products', {
   key: 'products',
-  transform: ({ products }) => {
+  transform: (products) => {
     return products.map(item => ({
       id: item.id,
       name: item.name,
