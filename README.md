@@ -1,6 +1,6 @@
 # 🛒 Nuxt 3 E-Commerce & Admin Panel Capstone
 
-A full-stack E-Commerce application with a robust Admin Dashboard built using **Nuxt 3, Vue 3, TypeScript, TailwindCSS (ShadCN), MongoDB,** and **Prisma**. This project showcases modern web development best practices, offering both a seamless shopping experience for users and a powerful management interface for admins.
+A full-stack E-Commerce application with Admin Dashboard built using **Nuxt 3, Vue 3, TypeScript, TailwindCSS (ShadCN), MongoDB,** and **Prisma**. This project showcases modern web development best practices, offering both a seamless shopping experience for users and a powerful management interface for admins.
  
 
 ## 🚀 Features & Topics Covered  
