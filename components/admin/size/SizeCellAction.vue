@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useStore from '~/compsables/useStore'
+import useStore from '~/composables/useStore'
 
 const props = defineProps<{
   size: {

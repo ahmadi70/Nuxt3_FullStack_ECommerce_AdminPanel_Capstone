@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import type { SafeProduct } from '~/types'
-import useCart from '~/compsables/useCart';
+import useCart from '~/composables/useCart';
 
 interface CartItemProps {
   data: SafeProduct

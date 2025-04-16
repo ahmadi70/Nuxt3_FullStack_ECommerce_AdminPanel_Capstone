@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import type { SafeProduct } from '~/types'
-import usePreviewModal from '~/compsables/usePreviewModal'
-import useCart from '~/compsables/useCart';
+import usePreviewModal from '~/composables/usePreviewModal'
+import useCart from '~/composables/useCart';
 
 const { onOpen } = usePreviewModal()
 

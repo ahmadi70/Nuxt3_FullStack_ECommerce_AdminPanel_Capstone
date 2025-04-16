@@ -1,6 +1,6 @@
 <script setup lang="ts">
-import useCart from '~/compsables/useCart'
-import useStore from '~/compsables/useStore'
+import useCart from '~/composables/useCart'
+import useStore from '~/composables/useStore'
 
 const { cartItems, removeAll} = useCart()
 

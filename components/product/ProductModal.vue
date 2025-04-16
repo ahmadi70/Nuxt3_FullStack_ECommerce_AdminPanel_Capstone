@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import usePreviewModal from '~/compsables/usePreviewModal'
+import usePreviewModal from '~/composables/usePreviewModal'
 
 const { isOpen, onClose, selectedProduct } = usePreviewModal()
 

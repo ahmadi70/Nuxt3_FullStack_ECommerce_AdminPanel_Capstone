@@ -2,7 +2,7 @@
 import type { RouteParams } from '~/types'
 import { toTypedSchema } from '@vee-validate/zod'
 import { useForm } from 'vee-validate'
-import useStore from '~/compsables/useStore'
+import useStore from '~/composables/useStore'
 import type { Category, Color, Size, Image } from '@prisma/client'
 
 const { isLoading, toggleLoading, showMessage, showError } = useStore()

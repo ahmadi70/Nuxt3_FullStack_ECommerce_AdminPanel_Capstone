@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import useCart from '~/compsables/useCart'
+import useCart from '~/composables/useCart'
 
 const { user, clear } = useUserSession()
 
