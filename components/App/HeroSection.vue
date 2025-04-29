@@ -1,5 +1,5 @@
 <template>
-  <Section class="bg-rose-100">
+  <BaseSection class="bg-rose-100">
     <div class="hidden sm:mb-8 sm:flex sm:justify-center">
       <div class="relative rounded-full text-sm px-3 py-1 leading-6 text-foreground ring-1 ring-gray-900/10 hover:ring-gray-900/20">
         Announcing our next summer products
@@ -24,5 +24,5 @@
         </NuxtLink>
       </div>
     </div>
-  </Section>
+  </BaseSection>
 </template>

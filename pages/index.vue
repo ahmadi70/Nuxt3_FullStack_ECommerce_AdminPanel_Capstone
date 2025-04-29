@@ -1,6 +1,6 @@
 <template>
   <div>
-    <HeroSection></HeroSection>
-    <FeaturedSection></FeaturedSection>
+    <AppHeroSection></AppHeroSection>
+    <AppFeaturedSection></AppFeaturedSection>
   </div>
 </template>

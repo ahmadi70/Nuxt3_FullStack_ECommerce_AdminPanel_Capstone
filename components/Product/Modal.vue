@@ -6,7 +6,7 @@ const { isOpen, onClose, selectedProduct } = usePreviewModal()
 </script>
 
 <template>
-  <Modal
+  <BaseModal
     :is-modal-visible="isOpen"
     @on-close="onClose"
   >
@@ -37,7 +37,7 @@ const { isOpen, onClose, selectedProduct } = usePreviewModal()
         <ProductInfo :data="selectedProduct"></ProductInfo>
       </div>
     </div>
-  </Modal>
+  </BaseModal>
 </template>
 
 <style scoped>

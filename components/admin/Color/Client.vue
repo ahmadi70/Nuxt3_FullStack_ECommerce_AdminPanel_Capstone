@@ -1,13 +1,14 @@
 <script setup lang="ts">
-import { columns } from '~/components/admin/category/CategoryColumn'
+import { columns } from '~/components/Admin/Color/Column'
 
-const { data: categories, status } = await useFetch('/api/admin/categories', {
-  key: 'categories',
+const { data: colors, status } = await useFetch('/api/admin/colors', {
+  key: 'colors',
   transform: (colors) => {
     return colors.map(item => {
       return {
         id: item.id,
         name: item.name,
+        value: item.value,
         createdAt: useDateFormat(new Date(item.createdAt), 'D. MMMM YYYY')
       }
     })
@@ -18,12 +19,12 @@ const { data: categories, status } = await useFetch('/api/admin/categories', {
 
 <template>
   <div class="flex items-center justify-between">
-    <Heading
-      description="Manage Categories"
-      title="Categories"
+    <BaseHeading
+      description="Manage Colors"
+      title="Colors"
     >
-    </Heading>
-    <NuxtLink to="/admin/categories/new">
+    </BaseHeading>
+    <NuxtLink to="/admin/colors/new">
       <Button>
         <Icon name="lucide:plus" class="mr-2 h-4 w-4"></Icon>
         Add New
@@ -33,7 +34,7 @@ const { data: categories, status } = await useFetch('/api/admin/categories', {
   <DataTable
     :columns="columns"
     v-if="status !== 'pending'"
-    :data="categories ? categories : []"
+    :data="colors ? colors : []"
     column-to-search="name"
   ></DataTable>
 </template>

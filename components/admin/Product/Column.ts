@@ -1,6 +1,6 @@
 import type { ColumnDef } from "@tanstack/vue-table"
-import ActionMenu from './ProductCellAction.vue'
-import ColorValue from "../color/ColorValue.vue"
+import ActionMenu from './CellAction.vue'
+import ColorValue from "../Color/Value.vue"
 
 export interface Color {
   id: string

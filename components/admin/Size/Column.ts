@@ -1,15 +1,15 @@
 import type { ColumnDef } from "@tanstack/vue-table"
-import ActionMenu from './ColorCellAction.vue'
-import ColorValue from "./ColorValue.vue"
+import ActionMenu from './CellAction.vue'
+import Value from "./Value.vue"
 
-export interface Color {
+export interface Size {
   id: string
   name: string
   value: string
   createdAt: string
 }
 
-export const columns: ColumnDef<Color>[] = [
+export const columns: ColumnDef<Size>[] = [
   {
     accessorKey: 'name',
     header: 'Name'
@@ -18,8 +18,8 @@ export const columns: ColumnDef<Color>[] = [
     accessorKey: 'value',
     header: 'Value',
     cell: ({ row }) => {
-      return h(ColorValue, {
-        colorCode: row.original.value
+      return h(Value, {
+        sizeCode: row.original.value
       })
     }
   },
@@ -31,9 +31,9 @@ export const columns: ColumnDef<Color>[] = [
     id: 'actions',
     enableHiding: false,
     cell: ({ row }) => {
-      const color = row.original
+      const size = row.original
       return h('div', { class: 'relative' }, h(ActionMenu, {
-        color
+        size
       }))
     }
   }

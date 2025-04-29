@@ -8,7 +8,7 @@ const { data: products, status } = await useFetch<SafeProduct[]>(`/api/admin/pro
 </script>
 
 <template>
-  <Section>
+  <BaseSection>
     <ProductList :items="products" title="Featured Products" :is-loading="status === 'pending'" />
-  </Section>
+  </BaseSection>
 </template>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { columns } from '~/components/admin/product/ProductColumn'
+import { columns } from '~/components/Admin/Product/Column'
 
 const { data: products, status } = await useFetch('/api/admin/products', {
   key: 'products',
@@ -22,11 +22,11 @@ const { data: products, status } = await useFetch('/api/admin/products', {
 
 <template>
   <div class="flex items-center justify-between">
-    <Heading
+    <BaseHeading
       description="Manage Products"
       title="Products"
     >
-    </Heading>
+    </BaseHeading>
     <NuxtLink to="/admin/products/new">
       <Button>
         <Icon name="lucide:plus" class="mr-2 h-4 w-4"></Icon>

@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { columns } from '~/components/admin/size/SizeColumn'
+import { columns } from '~/components/Admin/Size/Column'
 
 const { data: sizes, status } = await useFetch('/api/admin/sizes', {
   key: 'sizes',
@@ -19,11 +19,11 @@ const { data: sizes, status } = await useFetch('/api/admin/sizes', {
 
 <template>
   <div class="flex items-center justify-between">
-    <Heading
+    <BaseHeading
       description="Manage Sizes"
       title="Sizes"
     >
-    </Heading>
+    </BaseHeading>
     <NuxtLink to="/admin/sizes/new">
       <Button>
         <Icon name="lucide:plus" class="mr-2 h-4 w-4"></Icon>

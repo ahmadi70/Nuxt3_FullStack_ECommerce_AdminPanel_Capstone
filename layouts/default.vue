@@ -4,7 +4,7 @@
 
 <template>
   <div>
-    <Navbar></Navbar>
+    <BaseNavbar></BaseNavbar>
     <slot></slot>
   </div>
 </template>

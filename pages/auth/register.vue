@@ -65,10 +65,10 @@ const onSubmit = async () => {
               />
             </div>
             <div class="grid grid-cols-1 mt-2">
-              <SocialButton
+              <AppSocialButton
                 icon="radix-icons:github-logo"
                 label="Github"
-              ></SocialButton>
+              ></AppSocialButton>
             </div>
           </CardContent>
           <CardFooter class="flex-col space-y-2">

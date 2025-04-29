@@ -11,7 +11,7 @@ const { data, status } = await useFetch<any>('/api/admin/analytics', {
 <template>
   <div class="flex-col">
     <div class="flex-1 space-y-4 p-8 pt-6">
-      <Heading title="Dashboard" description="Overview of your store" />
+      <BaseHeading title="Dashboard" description="Overview of your store" />
       <Separator />
     </div>
     <div class="grid gap-4 grid-cols-3">

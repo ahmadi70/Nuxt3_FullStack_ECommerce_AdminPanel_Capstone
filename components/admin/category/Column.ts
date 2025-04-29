@@ -1,5 +1,5 @@
 import type { ColumnDef } from "@tanstack/vue-table"
-import ActionMenu from './CategoryCellAction.vue'
+import ActionMenu from './CellAction.vue'
 
 export interface Category {
   id: string
