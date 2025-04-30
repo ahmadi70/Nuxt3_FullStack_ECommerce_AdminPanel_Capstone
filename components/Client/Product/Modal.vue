@@ -6,7 +6,7 @@ const { isOpen, onClose, selectedProduct } = usePreviewModal()
 </script>
 
 <template>
-  <BaseModal
+  <WidgetModal
     :is-modal-visible="isOpen"
     @on-close="onClose"
   >
@@ -34,10 +34,10 @@ const { isOpen, onClose, selectedProduct } = usePreviewModal()
         </Carousel>
       </div>
       <div class="sm:col-span-8 lg:col-span-6">
-        <ProductInfo :data="selectedProduct"></ProductInfo>
+        <ClientProductInfo :data="selectedProduct"></ClientProductInfo>
       </div>
     </div>
-  </BaseModal>
+  </WidgetModal>
 </template>
 
 <style scoped>

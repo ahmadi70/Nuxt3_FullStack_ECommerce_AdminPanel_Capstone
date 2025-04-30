@@ -11,7 +11,7 @@ const description = ref('Edit Category')
 const toastMessage = ref('Category Updated')
 const action = ref('Save Changes')
 const isEditing = ref(true)
-const isAlertModalVisible = ref(false)
+const isAlertPopupVisible = ref(false)
 
 const route = useRoute()
 const categoryId = (route.params as RouteParams).categoryId
@@ -105,7 +105,7 @@ const deleteCategory = async () => {
     <div class="flex items-center justify-between">
       <heading :title="title" :description="description"></heading>
       <Button
-        @click="isAlertModalVisible != isAlertModalVisible"
+        @click="isAlertPopupVisible != isAlertPopupVisible"
         v-if="isEditing"
         size="sm"
         variant="destructive"
@@ -139,10 +139,10 @@ const deleteCategory = async () => {
       >{{ action }}</Button>
     </form>
   </div>
-  <AlertModal
-    v-if="isAlertModalVisible"
+  <BaseAlertPopup
+    v-if="isAlertPopupVisible"
     @on-confirm="deleteCategory"
-    :is-open="isAlertModalVisible"
-    @on-close="isAlertModalVisible = false"
-  ></AlertModal>
+    :is-open="isAlertPopupVisible"
+    @on-close="isAlertPopupVisible = false"
+  ></BaseAlertPopup>
 </template>

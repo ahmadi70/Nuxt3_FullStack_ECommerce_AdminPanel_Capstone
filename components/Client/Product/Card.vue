@@ -50,5 +50,5 @@ const { addItem } = useCart()
       </Button>
     </CardContent>
   </Card>
-  <ProductModal></ProductModal>
+  <ClientProductModal></ClientProductModal>
 </template>

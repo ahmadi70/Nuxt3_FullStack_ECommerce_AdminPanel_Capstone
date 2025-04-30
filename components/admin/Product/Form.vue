@@ -12,7 +12,7 @@ const description = ref('Edit Product')
 const toastMessage = ref('Product Updated')
 const action = ref('Save Changes')
 const isEditing = ref(true)
-const isAlertModalVisible = ref(false)
+const isAlertPopupVisible = ref(false)
 
 const route = useRoute()
 const productId = (route.params as RouteParams).productId
@@ -118,7 +118,7 @@ const deleteProduct = async () => {
     <div class="flex items-center justify-between">
       <heading :title="title" :description="description"></heading>
       <Button
-        @click="isAlertModalVisible != isAlertModalVisible"
+        @click="isAlertPopupVisible != isAlertPopupVisible"
         v-if="isEditing"
         size="sm"
         variant="destructive"
@@ -133,13 +133,13 @@ const deleteProduct = async () => {
         <FormItem>
           <FormLabel>Product Images</FormLabel>
           <FormControl>
-            <ImageUpload
+            <WidgetImageUpload
               @on-change="(url) => resetField({ value: [...componentField.modelValue, { url }]})"
               @on-remove="(url) => resetField({ value: [...componentField.modelValue.filter((currentImage: Image) => currentImage.url !== url)]})"
               :value="componentField.modelValue.map((image: Image) => image.url)"
               v-bind="$attrs"
             >
-            </ImageUpload>
+            </WidgetImageUpload>
           </FormControl>
           <FormDescription />
           <FormMessage />
@@ -283,10 +283,10 @@ const deleteProduct = async () => {
       >{{ action }}</Button>
     </form>
   </div>
-  <AlertModal
-    v-if="isAlertModalVisible"
+  <BaseAlertPopup
+    v-if="isAlertPopupVisible"
     @on-confirm="deleteProduct"
-    :is-open="isAlertModalVisible"
-    @on-close="isAlertModalVisible = false"
-  ></AlertModal>
+    :is-open="isAlertPopupVisible"
+    @on-close="isAlertPopupVisible = false"
+  ></BaseAlertPopup>
 </template>

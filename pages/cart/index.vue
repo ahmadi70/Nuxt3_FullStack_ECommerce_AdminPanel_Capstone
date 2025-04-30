@@ -10,7 +10,7 @@ const { cartItems } = useCart()
     <div class="mt-12 lg:grid lg:grid-cols-12 lg:items-start gap-x-12">
       <div class="lg:col-span-7">
         <ul>
-          <CartItem    
+          <ClientCartItem    
             v-for="item in cartItems"
             :key="item.id"
             :data="item"        
@@ -20,7 +20,7 @@ const { cartItems } = useCart()
           </p>
         </ul>
       </div>
-      <CartSummary />
+      <ClientCartSummary />
     </div>
   </div>
 </template>

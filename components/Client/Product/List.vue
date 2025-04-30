@@ -11,13 +11,13 @@ defineProps<{
 <template>
   <div class="space-y-4">
     <h3 class="font-bold text-3xl">{{ title }}</h3>
-    <NoResult v-if="!items.length"></NoResult>
+    <BaseNoResult v-if="!items.length"></BaseNoResult>
     <div class="grid grid-cols-3 gap-8">
       <template v-if="!isLoading">
-        <ProductCard v-for="item in items" :key="item.id" :data="item"></ProductCard>
+        <ClientProductCard v-for="item in items" :key="item.id" :data="item"></ClientProductCard>
       </template>
       <template v-else>
-        <CardLoader v-for="i in 3" :key="i"></CardLoader>
+        <BaseCardLoader v-for="i in 3" :key="i"></BaseCardLoader>
       </template>
     </div>
   </div>

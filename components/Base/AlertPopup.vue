@@ -13,7 +13,7 @@ const emit = defineEmits(['onConfirm', 'onClose'])
 </script>
 
 <template>
-  <BaseModal
+  <WidgetModal
     :is-modal-visible="isModalVisible"
     title="Are you sure?"
     description="To continue the action click Confirm"
@@ -32,5 +32,5 @@ const emit = defineEmits(['onConfirm', 'onClose'])
           @click="emit('onConfirm')"
           >Confirm</Button>
       </div>
-    </BaseModal>
+    </WidgetModal>
 </template>

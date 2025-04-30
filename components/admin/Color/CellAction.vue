@@ -16,7 +16,7 @@ function copy(id: string) {
 
 const { showMessage, showError, toggleLoading} = useStore()
 
-const isAlertModalVisible = ref(false)
+const isAlertPopupVisible = ref(false)
 
 const deleteColor = async () => {
   try {
@@ -61,16 +61,16 @@ const deleteColor = async () => {
         <Icon name="lucide:pencil" class="mr-2 w-4 h-4" />
         <span>Edit</span>
       </DropdownMenuItem>
-      <DropdownMenuItem @click="isAlertModalVisible = !isAlertModalVisible">
+      <DropdownMenuItem @click="isAlertPopupVisible = !isAlertPopupVisible">
         <Icon name="lucide:trash" class="mr-2 w-4 h-4" />
         <span>Delete</span>
       </DropdownMenuItem>
     </DropdownMenuContent>
   </DropdownMenu>
-  <AlertModal
-    v-if="isAlertModalVisible"
+  <BaseAlertPopup
+    v-if="isAlertPopupVisible"
     @on-confirm="deleteColor"
-    :is-open="isAlertModalVisible"
-    @on-close="isAlertModalVisible = false"
-  ></AlertModal>
+    :is-open="isAlertPopupVisible"
+    @on-close="isAlertPopupVisible = false"
+  ></BaseAlertPopup>
 </template>

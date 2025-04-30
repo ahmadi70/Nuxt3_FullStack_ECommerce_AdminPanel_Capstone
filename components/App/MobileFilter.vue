@@ -23,9 +23,9 @@ defineProps<FilterProps>()
       <SheetHeader class="mb-6">
         <SheetTitle>Filters</SheetTitle>
       </SheetHeader>
-      <Filter value-key="sizeId" name="Sizes" :data="sizes" />
-      <Filter value-key="colorId" name="Colors" :data="colors" />
-      <Filter value-key="categoryId" name="Categories" :data="categories" />
+      <WidgetFilter value-key="sizeId" name="Sizes" :data="sizes" />
+      <WidgetFilter value-key="colorId" name="Colors" :data="colors" />
+      <WidgetFilter value-key="categoryId" name="Categories" :data="categories" />
     </SheetContent>
   </Sheet>
 </template>

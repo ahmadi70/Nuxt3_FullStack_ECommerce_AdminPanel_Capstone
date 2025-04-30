@@ -31,10 +31,10 @@ const { data: sizes, status } = await useFetch('/api/admin/sizes', {
       </Button>
     </NuxtLink>
   </div>
-  <DataTable
+  <WidgetDataTable
     :columns="columns"
     v-if="status !== 'pending'"
     :data="sizes ? sizes : []"
     column-to-search="name"
-  ></DataTable>
+  ></WidgetDataTable>
 </template>

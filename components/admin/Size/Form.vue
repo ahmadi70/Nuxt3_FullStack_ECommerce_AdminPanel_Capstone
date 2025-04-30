@@ -11,7 +11,7 @@ const description = ref('Edit Size')
 const toastMessage = ref('Size Updated')
 const action = ref('Save Changes')
 const isEditing = ref(true)
-const isAlertModalVisible = ref(false)
+const isAlertPopupVisible = ref(false)
 
 const route = useRoute()
 const sizeId = (route.params as RouteParams).sizeId
@@ -106,7 +106,7 @@ const deleteSize = async () => {
     <div class="flex items-center justify-between">
       <heading :title="title" :description="description"></heading>
       <Button
-        @click="isAlertModalVisible != isAlertModalVisible"
+        @click="isAlertPopupVisible != isAlertPopupVisible"
         v-if="isEditing"
         size="sm"
         variant="destructive"
@@ -154,10 +154,10 @@ const deleteSize = async () => {
       >{{ action }}</Button>
     </form>
   </div>
-  <AlertModal
-    v-if="isAlertModalVisible"
+  <BaseAlertPopup
+    v-if="isAlertPopupVisible"
     @on-confirm="deleteSize"
-    :is-open="isAlertModalVisible"
-    @on-close="isAlertModalVisible = false"
-  ></AlertModal>
+    :is-open="isAlertPopupVisible"
+    @on-close="isAlertPopupVisible = false"
+  ></BaseAlertPopup>
 </template>

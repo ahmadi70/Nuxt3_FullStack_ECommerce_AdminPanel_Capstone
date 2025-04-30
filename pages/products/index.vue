@@ -46,22 +46,22 @@ const { data: categories, status: categoryStatus } = await useFetch('/api/admin/
   <div>
     <div class="mx-auto max-w-6xl w-full my-4">
       <div class="px-4 pb-24">
-        <MobileFilter :sizes="sizes" :colors="colors" :categories="categories"></MobileFilter>
+        <AppMobileFilter :sizes="sizes" :colors="colors" :categories="categories"></AppMobileFilter>
         <div class="lg:grid lg:grid-cols-5 lg:gap-x-8">
           <div class="hidden lg:block">
-             <Filter value-key="sizeId" name="Sizes" :data="sizes" />
-             <Filter value-key="colorId" name="Colors" :data="colors" />
-             <Filter value-key="categoryId" name="Categories" :data="categories" />
+             <WidgetFilter value-key="sizeId" name="Sizes" :data="sizes" />
+             <WidgetFilter value-key="colorId" name="Colors" :data="colors" />
+             <WidgetFilter value-key="categoryId" name="Categories" :data="categories" />
           </div>
           <div class="mt-6 lg:col-span-4 lg:mt-0">
-            <NoResult v-if="status !== 'pending' && (!products || !products.length)"></NoResult>
+            <BaseNoResult v-if="status !== 'pending' && (!products || !products.length)"></BaseNoResult>
             <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
               <template v-if="status !== 'pending' && products && products.length">
-                <ProductCard v-for="item in products" :key="item.id" :data="item"></ProductCard>
+                <ClientProductCard v-for="item in products" :key="item.id" :data="item"></ClientProductCard>
               </template>
               <template v-else>
                 <div class="grid gap-4 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-                  <CardLoader v-for="i in 6" :key="i"></CardLoader>
+                  <BaseCardLoader v-for="i in 6" :key="i"></BaseCardLoader>
                 </div>
               </template>
             </div>

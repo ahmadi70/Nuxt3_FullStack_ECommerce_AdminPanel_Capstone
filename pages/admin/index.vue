@@ -56,7 +56,7 @@ const { data, status } = await useFetch<any>('/api/admin/analytics', {
         <CardTitle class="text-sm font-medium">Overview</CardTitle>
       </CardHeader>
       <CardContent class="pl-2">
-        <Overview :data="data?.graphData" />
+        <AppOverview :data="data?.graphData" />
       </CardContent>
     </Card>
   </div>
