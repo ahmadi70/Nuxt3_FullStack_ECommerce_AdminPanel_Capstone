@@ -27,11 +27,11 @@ const { cartItems } = useCart()
             <DropdownMenuItem>
               Analytics
             </DropdownMenuItem>
+          </NuxtLink>
           <NuxtLink to="/admin/categories">
             <DropdownMenuItem>
               Categories
             </DropdownMenuItem>
-          </NuxtLink>
           </NuxtLink>
           <NuxtLink to="/admin/products">
             <DropdownMenuItem>
